@@ -1,7 +1,15 @@
+import { applyCurrentTheme, switchMode } from "./darkmode.js"
+
+// Evenements au chargement de la page et clique du bouton theme
+window.addEventListener("load", applyCurrentTheme)
+themeBtn.addEventListener('click', switchMode)
+
+
 // Récupération des infos depuis le localStorage
 // const inscriptionData = JSON.parse(localStorage.getItem('inscriptionData'))
 const inscriptionData = {
-    isOK: true,,
+    isOK: false,
+    erreur: 'Le tournoi est complet',
     nom: 'Toto',
     email: 'toto@gmail.com',
     nomTournoi: 'FIFA 2025'
@@ -12,27 +20,18 @@ const messageDiv = document.getElementById('message')
 
 // Si le statut de l'inscription est OK
 if (inscriptionData.isOK) {
+    messageDiv.classList.add('success')
     messageDiv.innerHTML = `
         <h2>Félicitation ! Votre inscription est confirmée.</h2>
-        <p>Nom : ${inscriptionData.nom}</p>
-        <p>Email : ${inscriptionData.email}</p>
-        <p>Tournoi : ${inscriptionData.tournoi}</p>
+        <p><strong>Nom :</strong> ${inscriptionData.nom}</p>
+        <p><strong>Email :</strong> ${inscriptionData.email}</p>
+        <p><strong>Tournoi :</strong> ${inscriptionData.nomTournoi}</p>
+        <a href="/index.html">Retour à l'accueil</a>
     `
 } else {
     messageDiv.innerHTML = `
         <h2>Désolé! Votre inscription n'est pas possible</h2>
-        <p>Raison : ${inscriptionData.erreur}</p>
+        <p><strong>Raison :</strong> ${inscriptionData.erreur}</p>
+        <a href="/pages/inscription.html">Choisir un autre tournoi</a>
     `
 }
-
-
-
-
-
-// const inscriptionData = {
-//     isOK: true,
-//     nom: 
-//     email:
-//     nomTournoi:
-// }
-// localStorage.setItem('inscriptionData', JSON.stringify(inscriptionData))
