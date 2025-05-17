@@ -1,7 +1,9 @@
 :root {
     --body-bg-color: #f4f4f9;
     --body-color: #333333;
+
     --btn-bg-color: #007BFF;
+
     --accent-color: #FF5722;
 }
 
@@ -9,20 +11,27 @@
 :root.dark {
     --body-bg-color: #1e1e2f;
     --body-color: #f1f1f1;
+
     --btn-bg-color: #3399FF;
+
     --accent-color: #FF9800;
 }
 
 body {
     background-color: var(--body-bg-color);
     color: var(--body-color);
+    accent-color: var(--accent-color);
+
     font-family: Arial;
     font-size: 16px;
+
     display: grid;
     grid-template-areas:
-    "header"
-    "main"
-    "footer";
+        "header"
+        "main"
+        "footer";
+
+    transition: all 0.3s;
 }
 
 /* Header */
@@ -56,7 +65,7 @@ h2 {
 }
 
 #message.success {
-    background-color: lightgreen;
+    background-color: rgb(127, 170, 127);
 }
 
 

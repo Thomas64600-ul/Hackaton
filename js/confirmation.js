@@ -1,14 +1,9 @@
-import { applyCurrentTheme, switchMode } from "./darkmode.js"
-
-// Evenements au chargement de la page et clique du bouton theme
-window.addEventListener("load", applyCurrentTheme)
-themeBtn.addEventListener('click', switchMode)
-
+import "./dark-mode.js"  // Gestion mode sombre
 
 // Récupération des infos depuis le localStorage
 // const inscriptionData = JSON.parse(localStorage.getItem('inscriptionData'))
 const inscriptionData = {
-    isOK: false,
+    isOK: true,
     erreur: 'Le tournoi est complet',
     nom: 'Toto',
     email: 'toto@gmail.com',
